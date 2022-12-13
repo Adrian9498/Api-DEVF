@@ -17,12 +17,12 @@ export const Modo = sequelize.define('modo',{
      
 });
 
-Artista.hasOne(Tonality_Specs,{
+Modo.hasOne(Tonality_Specs,{
     foreignKey : "id_modo",
     sourceKey : "id_modo"
 });
 
-Album.belongsTo(Modo,{
+Tonality_Specs.belongsTo(Modo,{
     foreignKey : "id_modo",
     target : "id_modo"
 })

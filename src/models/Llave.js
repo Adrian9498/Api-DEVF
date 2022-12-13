@@ -17,12 +17,12 @@ export const Llave = sequelize.define('llave',{
      
 });
 
-Artista.hasOne(Tonality_Specs,{
+Llave.hasOne(Tonality_Specs,{
     foreignKey : "id_llave",
     sourceKey : "id_llave"
 });
 
-Album.belongsTo(Llave,{
+Tonality_Specs.belongsTo(Llave,{
     foreignKey : "id_llave",
     target : "id_llave"
 })
