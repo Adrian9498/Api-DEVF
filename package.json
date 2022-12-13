@@ -1,0 +1,31 @@
+{
+  "name": "api-devf",
+  "version": "1.0.0",
+  "description": "Un api de consulta musical\r Yessica\r Prueba nueva \r Cristopher new branch\r Deyanira",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adrian9498/Api-DEVF.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adrian9498/Api-DEVF/issues"
+  },
+  "homepage": "https://github.com/Adrian9498/Api-DEVF#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.27.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
