@@ -2,6 +2,7 @@ import {DataTypes} from "sequelize";
 import {sequelize} from "../database/database.js";
 import { Album } from "./Album.js";
 
+
 export const Artista = sequelize.define('artista',{
     id_artista : {
         type : DataTypes.INTEGER,
@@ -31,5 +32,3 @@ Album.belongsTo(Artista,{
     foreignKey : "id_artista",
     target : "id_artista"
 })
-
-
