@@ -10,6 +10,6 @@ export const sequelize = new Sequelize(
     {
         host: process.env.DBHOST,
         port: process.env.DBPORT,
-        dialect : 'postgres' //Hardcode
+        dialect : 'postgres' 
     }
 );
