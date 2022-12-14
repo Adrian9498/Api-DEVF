@@ -1,11 +1,13 @@
 import {Router} from 'express';
-import { getAlbum } from '../controllers/album.controllers.js';
+import { getAlbum, searchAlbum } from '../controllers/album.controllers.js';
 
 const router = Router();
 
 router.get('/api/album', getAlbum);
 
-//router.post('/api/album', createAlbum);
+router.get('/api/album/:nombre', searchAlbum);
+
+// router.post('/api/album', createAlbum);
 
 //router.put('/api/:id', updateAlbum);
 
