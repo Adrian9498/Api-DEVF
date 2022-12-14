@@ -1,10 +1,10 @@
 import {DataTypes} from "sequelize";
 import {sequelize} from "../database/database.js";
-import {Tonality_Specs} from "../models/Tonality_Specs"
+import {Tonality_Specs} from "../models/Tonality_Specs.js"
 
 //Con esta tabla modo pasa a menor en 1 y major en 2
 
-export const Modo = sequelize.define('modo',{
+export const Modo = sequelize.define('modos',{
     id_modo : {
         type : DataTypes.INTEGER,
         autoIncrement : true,
