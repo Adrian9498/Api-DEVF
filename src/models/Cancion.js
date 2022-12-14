@@ -16,6 +16,8 @@ export const Cancion = sequelize.define('cancion',{
         type : DataTypes.INTEGER,
         allowNull : false
     }
+},{
+    tableName: 'cancion'
 });
 
 Cancion.hasMany(Cancion_Artista,{
