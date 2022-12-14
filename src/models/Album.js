@@ -1,6 +1,6 @@
 import {DataTypes} from "sequelize";
 import {sequelize} from "../database/database.js";
-import {Artista} from "./Artista.js";
+import { Cancion } from "./Cancion.js";
 
 export const Album = sequelize.define('album',{
     id_album : {
@@ -13,6 +13,16 @@ export const Album = sequelize.define('album',{
         allowNull : false
     }
 });
+
+Album.hasMany(Cancion,{
+    foreignKey : "id_album",
+    sourceKey : "id_album"
+})
+
+Cancion.belongsTo(Album,{
+    foreignKey : "id_album",
+    target : "id_album"
+})
 
 
 
