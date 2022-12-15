@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import { getArtista,searchArtista,createArtista,getMostPopularArtistas,getLessPopularArtistas} from '../controllers/artista.controllers.js';
+import { getArtista,searchArtista,createArtista,getMostPopularArtistas,getLessPopularArtistas,deleteArtista} from '../controllers/artista.controllers.js';
 const router = Router();
 
 router.get('/api/artista', getArtista);
@@ -10,6 +10,6 @@ router.get('/api/less_popular/artista', getLessPopularArtistas);
 
 //router.put('/projects/:id', updateProject);
 
-//router.delete('/projects/:id', deleteProject);
+router.delete('/api/artista/:id', deleteArtista);
 
 export default router;

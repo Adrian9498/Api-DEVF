@@ -83,3 +83,16 @@ export const getLessPopularArtistas = async (req,res) => {
         res.status(500).json({"error": err.message});
     }
 }
+
+export const deleteArtista = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const result = await Artista.destroy({
+            where: {id_artista:id}
+        })
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({"error": error.message});
+    }
+    
+}
