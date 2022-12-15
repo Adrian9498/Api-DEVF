@@ -4,7 +4,15 @@ import { Op } from 'sequelize';
 
 export const getAlbum = async (req,res) => {
     try{
-        const response = await Album.findAll();
+        const response = await Album.findAll({
+            attributes: ['nombre'],
+            include: [
+                {
+                    model: Artista,
+                    attributes: ['nombre', 'popularidad'],
+                }
+            ]
+        });
         res.status(200).json(response);
     }catch(err){
         res.status(500).json({"error": err.message});
