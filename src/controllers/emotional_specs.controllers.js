@@ -24,3 +24,17 @@ export const createEmotional_Specs = async (req,res)=>{
             res.status(500).json({"error": err.message});
         }
     }
+
+    export const deleteEmotional_Specs = async (req, res) => {
+        try {
+            const {id_emotional_specs} = req.params;
+            const result = await Emotional_Specs.destroy({
+                where: {id_emotional_specs}
+            })
+    
+            res.status(200).json(result);
+        } catch (error) {
+            res.status(500).json({"error": error.message});
+        }
+        
+    }
