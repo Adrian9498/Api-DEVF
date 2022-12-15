@@ -62,3 +62,15 @@ export const createAlbum = async (req,res)=>{
     }
 }
 
+export const deleteAlbum = async (req, res) => {
+    try{
+        const {id} = req.params;
+        const result = await Album.destroy({
+            where: {id_Album:id}
+        });
+        res.status(200).json(result);
+    }catch(err){
+        res.status(500).json({"error": err.message});
+    }
+};
+
