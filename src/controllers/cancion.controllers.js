@@ -27,3 +27,35 @@ export const getCancion = async (req,res) => {
         res.status(500).json({"error": err.message});
     }
 }
+
+export const getCancionesMasPopulares = async (req,res) => {
+    try{
+        const response = await Cancion.findAll(
+            {   
+                attributes: ['id_cancion','nombre','popularidad'], 
+                where: {
+                    popularidad:{[Op.gt]:80},
+                }
+            }
+        );
+        res.status(200).json(response);
+    }catch(err){
+        res.status(500).json({"error": err.message});
+    }
+}
+
+export const getCancionesMenosPopulares = async (req,res) => {
+    try{
+        const response = await Cancion.findAll(
+            {   
+                attributes: ['id_cancion','nombre','popularidad'], 
+                where: {
+                    popularidad:{[Op.lt]:30},
+                }
+            }
+        );
+        res.status(200).json(response);
+    }catch(err){
+        res.status(500).json({"error": err.message});
+    }
+}
