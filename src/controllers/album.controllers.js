@@ -4,7 +4,15 @@ import { Op } from 'sequelize';
 
 export const getAlbum = async (req,res) => {
     try{
-        const response = await Album.findAll();
+        const response = await Album.findAll({
+            attributes: ['nombre'],
+            include: [
+                {
+                    model: Artista,
+                    attributes: ['nombre', 'popularidad'],
+                }
+            ]
+        });
         res.status(200).json(response);
     }catch(err){
         res.status(500).json({"error": err.message});
@@ -61,4 +69,16 @@ export const createAlbum = async (req,res)=>{
         res.status(500).json({"error": err.message});
     }
 }
+
+export const deleteAlbum = async (req, res) => {
+    try{
+        const {id} = req.params;
+        const result = await Album.destroy({
+            where: {id_Album:id}
+        });
+        res.status(200).json(result);
+    }catch(err){
+        res.status(500).json({"error": err.message});
+    }
+};
 
