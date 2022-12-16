@@ -74,7 +74,7 @@ export const deleteAlbum = async (req, res) => {
     try{
         const {id} = req.params;
         const result = await Album.destroy({
-            where: {id_Album:id}
+            where: {id_album:id}
         });
         res.status(200).json(result);
     }catch(err){

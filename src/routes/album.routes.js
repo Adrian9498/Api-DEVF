@@ -9,7 +9,7 @@ router.get('/api/album/:nombre', searchAlbum);
 
 router.post('/api/album', createAlbum);
 
-router.post('/api/album/:id', deleteAlbum);
+router.delete('/api/album/:id', deleteAlbum);
 
 //router.put('/api/:id', updateAlbum);
 
